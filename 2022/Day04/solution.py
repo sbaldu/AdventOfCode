@@ -29,6 +29,7 @@ def overlap(range_1: tuple, range_2: tuple):
         for element in list_range_2:
             if element in list_range_1:
                 return True
+    return False
 
 
 file = open('./input.txt', 'r')

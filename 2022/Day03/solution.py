@@ -2,11 +2,11 @@
 file = open("./input.txt", "r")
 
 def score(letter):
-    letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    if not(letter.isupper()):
+    letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+               'n','o','p','q','r','s','t','u','v','w','x','y','z']
+    if not letter.isupper():
         return letters.index(letter) + 1
-    else:
-        return letters.index(letter.lower()) + 27
+    return letters.index(letter.lower()) + 27
 
 backpacks = []
 total = 0
@@ -32,6 +32,6 @@ for group in groups:
     for letter in backpacks[group]:
         if (letter in backpacks[group+1]) and (letter in backpacks[group+2]):
             badges.append(score(letter))
-            break         
+            break
 new_total = sum(badges)
 print("The second solution is:", new_total)
